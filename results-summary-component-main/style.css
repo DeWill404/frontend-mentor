@@ -1,0 +1,239 @@
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+* {
+  --light-red: 0, 100%, 67%;
+  --orangey-yellow: 39, 100%, 56%;
+  --green-teal: 166, 100%, 37%;
+  --cobalt-blue: 234, 85%, 45%;
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  font-family: "Hanken Grotesk", sans-serif;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  border-radius: 0 0 32px 32px;
+  padding: 24px 0 40px 0;
+  color: var(--light-lavender);
+}
+
+.left * {
+  text-align: center;
+}
+
+.score-container {
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  border-radius: 50%;
+  width: max-content;
+  padding: 24px 36px;
+  margin: 24px auto 20px auto;
+  color: var(--pale-blue);
+}
+
+.score-container .obtained-score {
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.score-container .max-score {
+  opacity: 0.4;
+}
+
+.left .status {
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.left .status-message {
+  font-size: 16px;
+  max-width: 75%;
+  margin: auto;
+  opacity: 0.8;
+}
+
+.right {
+  padding: 24px;
+}
+
+.right-title {
+  color: var(--dark-gray-blue);
+  font-weight: 800;
+}
+
+.type-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-block: 24px;
+}
+
+.type-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: bold;
+  background: hsla(var(--pill-color), 0.1);
+}
+
+.type-pill.loading {
+  position: relative;
+  overflow: hidden;
+  height: 45px;
+}
+
+.type-pill.loading::after {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    -45deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  animation: loading 1s linear var(--delay) infinite;
+}
+
+.type-pill.reaction {
+  --pill-color: var(--light-red);
+  --delay: 0.5s;
+}
+
+.type-pill.memory {
+  --pill-color: var(--orangey-yellow);
+  --delay: 0.3s;
+}
+
+.type-pill.verbal {
+  --pill-color: var(--green-teal);
+  --delay: 0.1s;
+}
+
+.type-pill.visual {
+  --pill-color: var(--cobalt-blue);
+  --delay: 0s;
+}
+
+.type-pill .type-label {
+  flex-grow: 1;
+  color: hsl(var(--pill-color));
+}
+
+.type-pill .type-score .total-score {
+  display: inline-block;
+  margin-left: 6px;
+  opacity: 0.5;
+}
+
+.continue-btn {
+  width: 100%;
+  max-width: 400px;
+  padding-block: 16px;
+  border: none;
+  border-radius: 36px;
+  font-weight: bolder;
+  font-size: 18px;
+  background: var(--dark-gray-blue);
+  color: var(--white);
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  outline: none;
+}
+
+.continue-btn:hover,
+.continue-btn:focus {
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 8px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  translate: -50%;
+}
+
+.attribution a {
+  font-size: 11px;
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    height: 100vh;
+    display: flex;
+    --bg: 233, 245, 249;
+    background: var(--bg);
+  }
+
+  .container {
+    width: 90%;
+    max-width: 700px;
+    flex-direction: row;
+    margin: auto;
+    background: var(--bg);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(var(--bg), 1);
+  }
+
+  .left {
+    border-radius: 0 32px 32px 0;
+    padding: 30px 0;
+    width: 45%;
+  }
+
+  .score-container {
+    margin: 30px auto 24px auto;
+    padding: 38px 50px;
+  }
+
+  .left .status {
+    margin-bottom: 24px;
+  }
+
+  .right {
+    width: 55%;
+    padding: 36px;
+  }
+
+  .type-section {
+    margin-bottom: 40px;
+  }
+
+  .continue-btn {
+    padding-block: 12px;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}

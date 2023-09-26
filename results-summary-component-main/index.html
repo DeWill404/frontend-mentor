@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h3>Your Result</h3>
+        <div class="score-container">
+          <div class="obtained-score">00</div>
+          <div class="max-score">of 100</div>
+        </div>
+        <h2 class="status">Great</h2>
+        <p class="status-message">
+          Your scored higer than <span class="percent">0</span>% of the people
+          whe have taken these tests.
+        </p>
+      </div>
+      <div class="right">
+        <h3 class="right-title">Summary</h3>
+        <div class="type-section">
+          <div class="type-pill loading reaction"></div>
+          <div class="type-pill loading memory"></div>
+          <div class="type-pill loading verbal"></div>
+          <div class="type-pill loading visual"></div>
+        </div>
+        <button class="continue-btn">Continue</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/dewill404">DeWill404</a>.
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
