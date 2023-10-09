@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="container" current-tab="personal-info">
+      <div class="steps-container">
+        <div class="indicator-wrapper">
+          <button id="personal-info-indicator" class="indicator">
+            <span class="icon">1</span>
+            <p class="detail">
+              <span class="title">STEP 1</span>
+              <span class="label">YOUR INFO</span>
+            </p>
+          </button>
+          <button id="plan-indicator" class="indicator">
+            <span class="icon">2</span>
+            <p class="detail">
+              <span class="title">STEP 2</span>
+              <span class="label">SELECT PLAN</span>
+            </p>
+          </button>
+          <button id="add-ons-indicator" class="indicator">
+            <span class="icon">3</span>
+            <p class="detail">
+              <span class="title">STEP 4</span>
+              <span class="label">ADD-ONS</span>
+            </p>
+          </button>
+          <button id="summary-indicator" class="indicator">
+            <span class="icon">4</span>
+            <p class="detail">
+              <span class="title">STEP 4</span>
+              <span class="label">SUMMARY</span>
+            </p>
+          </button>
+          <span class="active-pointer"></span>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="steps-group">
+          <div id="personal-info-tab" class="tab">
+            <form class="tab-container">
+              <h2 class="tab-title">Personal info</h2>
+              <h3 class="tab-description">
+                Please provide your name, email address, and phone number.
+              </h3>
+              <div class="body">
+                <div class="form-input">
+                  <label for="name">Name</label>
+                  <span class="error hidden"></span>
+                  <input id="name" placeholder="e.g. Stephen King" required />
+                </div>
+                <div class="form-input">
+                  <label for="email">Email Address</label>
+                  <span class="error hidden"></span>
+                  <input id="email" placeholder="e.g. stephenking@lorem.com" />
+                </div>
+                <div class="form-input">
+                  <label for="number">Phone Number</label>
+                  <span class="error hidden"></span>
+                  <input id="number" placeholder="e.g. +1 234 597 890" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="plan-tab" class="tab">
+            <form class="tab-container">
+              <h2 class="tab-title">Select your plan</h2>
+              <h3 class="tab-description">
+                You have the option of monthly or yearly billing.
+              </h3>
+              <div class="body">
+                <div class="plan-option-list">
+                  <div class="plan-option radio-group">
+                    <input
+                      type="radio"
+                      name="plan"
+                      id="plan-arcade"
+                      value="arcade"
+                      checked
+                    />
+                    <label for="plan-arcade">
+                      <img
+                        class="image"
+                        src="./assets/images/icon-arcade.svg"
+                        alt="Arcade Icon"
+                      />
+                      <p class="description">
+                        <strong class="title">Arcade</strong>
+                        <span class="charge"> $9/mo </span>
+                        <span class="offer hidden-dn">2 months free</span>
+                      </p>
+                    </label>
+                  </div>
+
+                  <div class="plan-option radio-group">
+                    <input
+                      type="radio"
+                      name="plan"
+                      id="plan-advanced"
+                      value="advanced"
+                    />
+                    <label for="plan-advanced">
+                      <img
+                        class="image"
+                        src="./assets/images/icon-advanced.svg"
+                        alt="Advanced Icon"
+                      />
+                      <p class="description">
+                        <strong class="title">Advanced</strong>
+                        <span class="charge"> $12/mo </span>
+                        <span class="offer hidden-dn">2 months free</span>
+                      </p>
+                    </label>
+                  </div>
+
+                  <div class="plan-option radio-group">
+                    <input type="radio" name="plan" id="plan-pro" value="pro" />
+                    <label for="plan-pro">
+                      <img
+                        class="image"
+                        src="./assets/images/icon-pro.svg"
+                        alt="pro Icon"
+                      />
+                      <p class="description">
+                        <strong class="title">Pro</strong>
+                        <span class="charge"> $15/mo </span>
+                        <span class="offer hidden-dn">2 months free</span>
+                      </p>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="period-container">
+                  <div class="period-option radio-group">
+                    <input
+                      type="radio"
+                      name="period"
+                      id="period-monthly"
+                      value="monthly"
+                      checked
+                    />
+                    <label for="period-monthly">Monthly</label>
+                  </div>
+                  <button type="button" class="switch">
+                    <span class="switch-pill"></span>
+                  </button>
+                  <div class="period-option radio-group">
+                    <input
+                      type="radio"
+                      name="period"
+                      id="period-yearly"
+                      value="yearly"
+                    />
+                    <label for="period-yearly">Yearly</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="add-ons-tab" class="tab">
+            <form class="tab-container">
+              <h2 class="tab-title">Pick add-ons</h2>
+              <h3 class="tab-description">
+                Add-ons help enhance your gaming experience.
+              </h3>
+              <div class="body">
+                <div class="add-ons-list">
+                  <div class="add-ons-option">
+                    <input
+                      type="checkbox"
+                      name="add-ons"
+                      id="add-ons-online-service"
+                      value="online-service"
+                    />
+                    <label for="add-ons-online-service"> </label>
+                    <p>
+                      <strong class="title">Online Service</strong>
+                      <span class="subtitle">Access to multiplayer games</span>
+                    </p>
+                    <span class="charge"> +1/mo </span>
+                  </div>
+                  <div class="add-ons-option">
+                    <input
+                      type="checkbox"
+                      name="add-ons"
+                      id="add-ons-larger-storage"
+                      value="larger-storage"
+                    />
+                    <label for="add-ons-larger-storage"></label>
+                    <p>
+                      <strong class="title">Larger storage</strong>
+                      <span class="subtitle">Extra TB of cloud save</span>
+                    </p>
+                    <span class="charge"> +2/mo </span>
+                  </div>
+                  <div class="add-ons-option">
+                    <input
+                      type="checkbox"
+                      name="add-ons"
+                      id="add-ons-customizable-profile"
+                      value="customizable-profile"
+                    />
+                    <label for="add-ons-customizable-profile"></label>
+                    <p>
+                      <strong class="title">Customizable Profile</strong>
+                      <span class="subtitle">Custom theme on your profile</span>
+                    </p>
+                    <span class="charge"> +2/mo </span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="summary-tab" class="tab">
+            <form class="tab-container">
+              <h2 class="tab-title">Finishing up</h2>
+              <h3 class="tab-description">
+                Double-check everything looks OK before confirming.
+              </h3>
+              <div class="body">
+                <div class="charge-breakup">
+                  <div class="charge-details plan-details">
+                    <div class="detail">
+                      <strong class="plan-name">Arcade (Monthly)</strong>
+                      <button type="button" class="plan-changer">Change</button>
+                    </div>
+                    <span class="charge">$9/mo</span>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+
+                <div class="total-charge">
+                  <div class="charge-details">
+                    <span class="detail"> Total (per month) </span>
+                    <span class="charge">$12/mo</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="thank-you-tab" class="tab">
+            <form class="tab-container">
+              <img
+                src="./assets/images/icon-thank-you.svg"
+                alt="Thanl you icon"
+              />
+              <h2>Thank you!</h2>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="navigation-container">
+          <div class="btns-group">
+            <button id="nav-back-btn" class="btn">Go Back</button>
+            <button id="nav-next-btn" class="btn">Next Step</button>
+          </div>
+          <div class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+            >
+              Frontend Mentor
+            </a>
+            . Coded by <a href="https://github.com/dewill404">DeWill404</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
